@@ -6,15 +6,15 @@ import UserOutput from './UserOutput/UserOutput';
 class App extends Component {
 
   state = {
-    userName: "ativers"
+    username: "ativers"
   }
 
   nameChangedHandler = (event) => {
-    this.setState({userName: event.target.value})
+    this.setState({username: event.target.value})
   }
 
   buttonNameChangedHandler = () => {
-    this.setState({userName: "afasting"})
+    this.setState({username: "aaron.fasting"})
   }
 
 
@@ -22,9 +22,10 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Hello!</h1>
-        <UserInput changed={this.nameChangedHandler} currentName={this.state.userName}/> 
-        <UserOutput userName={this.state.userName}/>
+        <UserInput changed={this.nameChangedHandler} currentName={this.state.username}/> 
         <UserOutput userName="afasting"/>
+        <UserOutput userName={this.state.username}/>   
+        <UserOutput userName={this.state.username}/>
         <button onClick={this.buttonNameChangedHandler}>Switch Name</button>
       </div>
     );
